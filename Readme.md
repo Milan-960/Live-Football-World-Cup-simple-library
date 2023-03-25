@@ -9,3 +9,15 @@
 ```
 npm insatall
 ```
+
+### To Run The file
+
+```
+node index.js
+```
+
+### To Run the Test
+
+```
+npm test
+```

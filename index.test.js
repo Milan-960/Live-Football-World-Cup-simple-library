@@ -1,6 +1,8 @@
 // Import the js file to test
-const { helloWorld } = require("./index.js");
+const LiveFootballScoreboard = require("./LiveFootballScoreboard");
 
-it("writing the first test to check!", () => {
-  expect(helloWorld());
+describe("LiveFootballScoreboard", () => {
+  it("should import the LiveFootballScoreboard module", () => {
+    expect(typeof LiveFootballScoreboard).toBe("function");
+  });
 });
