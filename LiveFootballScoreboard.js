@@ -16,9 +16,14 @@ const LiveFootballScoreboard = () => {
     return game;
   }
 
+  function updateScore(game, homeScore, awayScore) {
+    game.homeScore = homeScore;
+    game.awayScore = awayScore;
+  }
+
   return {
     startNewGame,
+    updateScore,
   };
 };
-
 module.exports = LiveFootballScoreboard;
