@@ -2,8 +2,10 @@ const LiveFootballScoreboard = require("./LiveFootballScoreboard");
 
 // Test suite for LiveFootballScoreboard
 describe("LiveFootballScoreboard", () => {
+  // creating a new scoreboard
   let scoreboard;
 
+  // beforeEach hook to create a new scoreboard before each test case
   beforeEach(() => {
     scoreboard = LiveFootballScoreboard();
   });

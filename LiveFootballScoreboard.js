@@ -27,9 +27,41 @@ const LiveFootballScoreboard = () => {
     game.awayScore = awayScore;
   }
 
+  function finishGame(game) {
+    const index = games.indexOf(game);
+    if (index === -1) {
+      throw new Error("Game does not exist.");
+    }
+    games.splice(index, 1);
+  }
+
+  // returns a sorted summary of the games in the scoreboard
+  function getSummary() {
+    const sortedGames = [...games]
+      .map((game, index) => ({ ...game, originalIndex: index }))
+      .sort((a, b) => {
+        const scoreDiff =
+          a.homeScore + a.awayScore - (b.homeScore + b.awayScore);
+        if (scoreDiff !== 0) {
+          return scoreDiff;
+        }
+        return 0;
+      });
+    return sortedGames
+      .reverse()
+      .map(
+        (game, i) =>
+          `${i + 1}. ${game.homeTeam} ${game.homeScore} - ${game.awayScore} ${
+            game.awayTeam
+          }`
+      );
+  }
+
   return {
     startNewGame,
     updateScore,
+    finishGame,
+    getSummary,
   };
 };
 module.exports = LiveFootballScoreboard;
