@@ -22,6 +22,15 @@ const LiveFootballScoreboard = () => {
 
   // a function to update the score of a given game
   function updateScore(game, homeScore, awayScore) {
+    if (!games.includes(game)) {
+      throw new Error("Game does not exist");
+    }
+    if (!Number.isInteger(homeScore) || homeScore < 0) {
+      throw new Error("Home score must be a non-negative integer");
+    }
+    if (!Number.isInteger(awayScore) || awayScore < 0) {
+      throw new Error("Away score must be a non-negative integer");
+    }
     // updating the home score and away score of the game object
     game.homeScore = homeScore;
     game.awayScore = awayScore;
@@ -30,7 +39,7 @@ const LiveFootballScoreboard = () => {
   function finishGame(game) {
     const index = games.indexOf(game);
     if (index === -1) {
-      throw new Error("Game does not exist.");
+      throw new Error("Game does not exist");
     }
     games.splice(index, 1);
   }
