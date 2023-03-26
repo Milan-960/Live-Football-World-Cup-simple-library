@@ -34,3 +34,9 @@ b. Away team
 3. Finish game currently in progress. This removes a match from the scoreboard.
 
 4. Get a summary of games in progress ordered by their total score. The games with the same
+
+## Here are the links to the branches!
+
+[Develop](https://github.com/Milan-960/Live-Football-World-Cup-simple-library/tree/develop)
+
+[Java-Project](https://github.com/Milan-960/Live-Football-World-Cup-simple-library/tree/java-project)
